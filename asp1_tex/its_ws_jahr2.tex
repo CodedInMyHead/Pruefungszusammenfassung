@@ -1,0 +1,299 @@
+\documentclass[asp1.tex]{subfiles}
+\begin{document}
+
+\section{ITS Ws - Zweites Schuljahr}
+
+
+
+\subsection{WLAN}
+\subsubsection{Funknetze zur Datenübertragung}
+
+Während für Ethernet Token Ring auf Leitungen wie Kupfer- oder Lichtwellenleiter eingesetzt werden kann, kommen in den letzten Jahren vermehrt Funkstrecken als Übertragungsmedium zum Einsatz.
+
+\textbf{Vorteile:}
+\begin{itemize}
+    \item Oft das einzig mögliche Medium (z.B. in historischen Gebäuden)
+    \item Vergleichsweise unempfindlich gegen Katastrophen (z.B. Erdbeben)
+    \item Hohe Mobilität von Nutzern und Stationen
+\end{itemize}
+
+\textbf{Nachteile:}
+\begin{itemize}
+    \item Verschlüsselung erforderlich
+    \item Niedrigere Geschwindigkeit (im Durchschnitt)
+    \item Geteiltes Medium aller Nutzer \textrightarrow\space beschränkte Bandbreite
+\end{itemize}
+
+\textbf{Beispiele:}
+\begin{itemize}
+    \item WLAN nach IEEE 802.11
+    \item Bluetooth nach IEEE 802.15.1
+    \item WPAN (Wireless PANs; weniger verbreitet)
+    \item HomeRF (USA; weniger verbreitet)
+\end{itemize}
+
+\subsubsection{IEEE 802.11 WLAN}
+
+\begin{itemize}
+    \item \textbf{W}ireless \textbf{L}ocal \textbf{A}rea \textbf{N}etwork
+    \item Drahtloses, lokales Funknetz
+    \item IEEE 802.11 Standard beinhaltet eine Normen-Familie, deren Entwicklungsstufen durch einen oder mehrere Buchstaben näher gekennzeichnet sind
+    \item Als Oberbegriff für den Standard hat sich \textbf{WiFi} (Wireless Fidelity) etabliert
+\end{itemize}
+
+\break
+
+\textbf{WLAN-Standards im Überblick:}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.25\textwidth}||p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
+    \hline
+        \textbf{WLAN-Generation}&\textbf{Wi-Fi 4}&\textbf{Wi-Fi 5}&W\textbf{i-Fi 6 / 6E} \\\hline
+
+        \textbf{IEEE-Standard}&\textbf{IEEE 802.11n}&\textbf{IEEE 802.11ac}&\textbf{IEEE 802.11ax}  \\\hline
+
+        \hline
+
+        \textbf{Maximale Übertragungsrate}&600 MBit/s&6.936 MBit/s&9.608 MBit/s \\\hline
+
+        \textbf{Theoretische Übertragungsrate}&300 MBit/s&867 MBit/s&1.200 MBit/s \\\hline
+
+        \textbf{Maximale Reichweite}&100 m&50 m&50 m \\\hline
+
+        \textbf{Frequenzbereich}&2,4 + 5 GHz&nur für 5 GHz&2,4 + 5 GHz + 6 GHz \\\hline
+
+        \textbf{Maximale Sende/Empfangseinheiten}&4 x 4&8 x 8&8 x 8 \\\hline
+
+        \textbf{Antennentechnik}&MIMO&(MU-MIMO)&MU-MIMO \\\hline
+
+        \textbf{Maximale Kanalbreite}&40 MHz&160 MHz&160 MHz \\\hline
+
+        \textbf{Modulationsverfahren}&64QAM&256QAM&1024QAM
+
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Kanäle und Übertragungstechniken}
+
+\begin{outline}
+    \1 MIMO
+        \2 Multiple Input Multiple Output
+        \2 Miteinander kommunizierende WLAN-Stationen haben jeweils eigene Sende- und Empfangsantennen
+        \2 \textrightarrow\space Mehrere Datenströme können auf der gleichen Frequenz parallel übertragen werden
+        \2 Seit WIFI 4 im Einsatz
+    \1 MU-MIMO
+        \2 Multiuser-MIMO
+\end{outline}
+
+Neben dem Einsatz von verschiedenen Sendern und Empfängern, werden im WLAN unterschiedliche Frequenzen und Kanäle unterschieden.
+Es stehen im Standard folgende Frequenzbereiche zu Verfügung:
+\begin{outline}
+    \1 Unter 1GHz
+    \1 2,4 GHz (Haupt-Frequenzbereich)
+    \1 5 GHz
+    \1 6 GHz (zukünftige Nutzung in der EU)
+    \1 60 GHz
+\end{outline}
+
+Die Frequenzbereiche sind weltweit regional unterschiedlich reguliert.
+
+Alle Frequenzbereiche sind in der Regel lizenzfrei nutzbar. Daraus folgt auch, dass sich in den Bereichen andere Funktechniken und -netze tummeln.
+
+Die Geschwindigkeit und Stabilität hängen maßgeblich von der Intensität der Nutzung anderer Funktechniken im gleichen Frequenzband ab.
+
+\break
+
+\subsubsection{Frequenzbereiche}
+
+\begin{outline}
+    \1 2,4 GHz
+        \2 2,3995 bis 2,4845 GHz
+        \2 Reichweite: innerhalb eines Wohnhauses
+        \2 Kanalbreite: 20 und 40 MHz
+        \2 Wird als ISM-Frequenzband bezeichnet (Industrial, Scientific, Medicine)
+        \2 Viele verschiedene Standards und Funktechniken im Frequenzbereich
+        \2 79 schmalbandige Kanäle, zusammengefasst in Kanäle mit je 5MHz
+        \2 13 Kanäle in Europa, 11 in den USA und 14 in Japan
+        \2 Kanäle überlappen sich und sind nicht alle gleichzeitig nutzbar (je nach Verteilung nur 3 oder 4)
+    \1 5 GHz
+        \2 5,150 bis 5,350 GHZ + 5,470 bis 5,725 GHz
+        \2 Reichweite: Begrenzt auf eine Wohnung oder Stockwerk
+        \2 Kanalbreite: 20, 40, 80, 160 MHz
+        \2 Dient als Erweiterung um WLAN zu beschleunigen
+        \2 WLAN-Clients benötigen entsprechende Hardware-Ausstattung
+        \2 Europa: 5,15 bis 5,35 GHz mit Kanälen 36 bis 64 und 5,5 bis 5,7 GHz mit Kanälen 100 bis 140
+        \2 USA: 5,15 bis 5,35 GHz mit Kanälen 36 bis 64 und 5,5 bis 5,7 GHz mit Kanälen 100 bis 140; Ausnahme: 120, 124 und 128
+        \2 Nachteil: Frequenzband weltweit nicht einheitlich geregelt
+        \2 Da gewisser Frequenzbereich für Flug- und Wetterradar genutzt wird, ist die Erweiterung Dynamic Frequency Selection (DFS)in der EU Pflicht, wenn das Gerät in den reservierten Kanälen arbeitet.
+        \2 Ohne DFS darf nur auf den Kanälen 36 bis 48 gearbeitet werden
+    \1 6 GHz
+        \2 5,925 bis 6,425 GHz
+        \2 Reichweite: begrenzt auf eine Wohnung oder Stockwerk
+        \2 Kanalbreite: 20, 40, 80, 160 MHz
+        \2 Für klassische Mobilfunknutzung ungeeignet
+        \2 Entlastet durch mehrere 80- und 160-MHz-Funkkanäle das 5 GHz Frequenzband in dicht besiedelten Gebieten
+    \1 60 GHz
+        \2 57,0 bis 66,0 GHz
+        \2 Reichweite: begrenzt auf einen Raum
+        \2 Kanalbreite: 2 GHz
+\end{outline}
+
+\subsubsection{Modi und Geräteeinbindung}
+
+\textbf{Modi:}
+\begin{outline}
+    \1 Infrastrukturmodus
+        \2 Endgeräte müssen sich je nach Einstellung mit ihrer MAC- bzw. IP-Adresse bei einem Accesspoint anmelden oder erhalten von diesem eine IP-Adresse
+        \2 Kommunikation wird über Accesspoint gesteuert und überwacht
+        \2 Accesspoint kann Verbindung in andere Netze herstellen (z.B. Internet)
+        \2 Wird meistens verwendet
+    \1 Ad-hoc Modus
+        \2 Zwei oder mehr Endgeräte bilden ein vermashtes Netz und kommunizieren miteinander
+        \2 Ein zentraler Knotenpunkt ist nicht erforderlich
+        \2 Wird für spontane Vernetzung verwendet
+\end{outline}
+
+
+\textbf{Netzeinbindung eines WLAN-Gerätes}
+Nach Aktivierung sucht das Gerät mit Scanning Methoden Partnergeräte zu finden:
+\begin{outline}
+    \1 Active Scanning
+        o	WLAN-Client sendet „Probe-Request“ der den SSID (Service Set Identifier) enthält und wartet auf Antwort von einem passenden AP (Accesspoint)
+    \1 Passive Scanning
+        \2 Gerät wartet auf „beacon management frames“ von den APs mit passendem SSID
+        \2 Fortlaufender Vorgang
+        \2 Ablauf:
+                \3 APs senden Beacon Management Frames
+                \3 WLAN-Client wählt besten AP aus
+                \3 WLAN-Client sendet Association Request zum AP
+                \3 AP sendet Association Response zurück
+\end{outline}
+
+\textbf{WLAN Roaming (Seamless Handover)}
+
+\begin{outline}
+    \1 Bei WLANs, die eine größere Fläche abdecken reicht ein AP meist nicht aus
+    \1 Um den ganzen Bereich abzudecken, werden mehrere APs platziert
+    \1 Wenn sich die Funkbereiche der APs überlappen, kann ein Client sich zwischen den APs bewegen, ohne die Verbindung zu unterbrechen
+    \1 Roaming bezeichnet den Funkzellenwechsel
+    \1 Um WLAN Roaming ohne Verbindungsverlust zu ermöglichen werden Hilfsmittel benötigt: (Auswahl)
+        \2 ESSID – Extended Service Set Identifier
+            \3 \textrightarrow\space Alle Accesspoints bekommen den gleichen SSID (müssen ESSID unterstützen)
+            \3 Alle Access Points müssen unterschiedliche Kanäle zugewiesen haben damit sich die Verbindungen nicht überlagern
+\end{outline}
+
+
+\subsubsection{Authentifizierung}
+
+Es wird unterschieden zwischen
+\begin{outline}
+    \1 Open System oder Enhanced Open
+    \1 WPA im Personal oder Enterprise Mode
+\end{outline}
+
+WPA steht hier für Wifi Protected Access. Die aktuell empfohlene Version ist WPA3, die eine AES Verschlüsselung mit einer Schlüssellänge von 256 Bit verwendet.
+
+\begin{outline}
+    \1 Open System
+        \2 Es wird auf eine Authentifizierung durch den Accesspoint verzichtet
+        \2 Voraussetzung ist nur, dass der Client den SSID kennt.
+    \1 Enhanced Open
+        \2 Auch bekannt unter Opportunistic Wireless Encryption
+        \2 Ermöglicht verschlüsselte Verbindung ohne Eingabe eines Schlüssels
+        \2 Sicherheitsniveau entspricht WPA2 mit PSK
+    \1 Personal Mode: Pre-Shared Key (PSK) / WLAN-Passwort
+        \2 Bei Authentifizierung mit PSK ist im AP ein Passwort hinterlegt, mit dem sich alle Clients authentifizieren müssen
+        \2 Stimmt das Passwort nicht überein, verweigert der AP die Verbindung
+    \1 Enterprise Mode: IEEE 802.1x
+        \2 Gedacht für WLAN, auf das eine größere Anzahl an Nutzern zugreifen
+        \2 Nutzer authentifizieren sich mit einer individuellen Benutzername und Passwort Kombination
+        \2 Einzelnen Nutzern kann so leicht der Zugriff entzogen werden
+        \2 IEEE 802.1x bezieht sich auf Zugangskontrollen im LAN. Im Zusammenhang werden oft EAP und RADIUS genannt
+        \2 EAP: Authentifizierungsprotokoll
+        \2 RADIUS:
+            \3 Zentrale Benutzerverwaltung
+            \3 Authentifizierung wird zentral gesteuert
+\end{outline}
+
+
+\textbf{Vor- und Nachteile von PSK und RADIUS:}
+
+RADIUS:
+\begin{outline}
+    \1 Vorteile
+        \2 Nutzermanagement möglich
+        \2 Theoretisch höhere Sicherheit durch Nutzerverwaltung
+        \2 Rollenverwaltung (verschiedene Anwendungsszenarien im WLAN)
+    \1 Nachteile
+        \2 Zur Authentifizierung ist ein Zertifikat notwendig (problematisch bei Android 12)
+        \2 Höherer Arbeitsaufwand (Passwörter vergessen, Konfiguration)
+        \2 Höhere Kosten
+\end{outline}
+
+\break
+PSK:
+\begin{outline}
+    \1 Vorteile
+        \2 Kein Verwaltungsaufwand
+        \2 Sehr komfortabel für Nutzer
+        \2 Zugangshürde im Vergleich zu offenen Systemen
+    \1 Nachteile
+        \2 Zugang ausschließlich über PSK (der weitergegeben werden kann) \textrightarrow\space keine Zuordnung zu einem Benutzer möglich)
+        \2 Problematisch Netzteilnehmer nachträglich auszuschließen
+        \2 Sicherheit des Netzes häufig eher problematisch
+\end{outline}
+
+
+\textbf{WLAN-Schwachstellen: (Auswahl)}
+\begin{outline}
+   \1 Default-Benutzer und Passwörter in APs und Routern
+   \1 Unsichere Grundkonfiguration von APs und Routern
+   \1 Veraltete Sicherheitsstandards
+   \1 Fehlerhafte Implementierungen von WPA2 und WPS
+   \1 Angreifbarkeit durch Denial-of-Service (DoS)
+   \1 Evil Twin und MAC-Spoofing
+   \1 Unsichere Benutzer-Access-Points in Enterprise-Netzwerken
+\end{outline}
+
+\textbf{Maßnahmen zur Erhöhung der Sicherheit: (Auswahl)}
+\begin{outline}
+    \1 Aktuelle Verschlüsselung verwenden
+    \1 Sichere Kennwörter verwenden oder vorschreiben
+    \1 Firmware aktuell halten
+    \1 Fernzugriff auf AP und Router deaktivieren
+    \1 WLAN ggf. mit MAC-Filtern kombinieren und so Zugang steuern
+    \1 Netzwerkname ggf. undurchsichtig vergeben
+    \1 WLAN-Zeitschalter
+    \1 Unterschiedliche Netze für unterschiedliche Rollen/Geräte
+    \1 Reichweite von APs und Routern begrenzen
+\end{outline}
+
+\subsection{ER Modelle}
+
+Mit einem ER-Modell (\textbf{E}ntity \textbf{R}elationship Modell) werden die Beziehungen in einer relationalen Datenbank beschrieben.
+
+\textbf{Grundlegende Komponenten:}
+\begin{outline}
+    \1 Entität (Entity): individuell identifizierbares Objekt der Wirklichkeit; z. B. der Angestellte Müller, das Projekt 3232
+    \1 Beziehung (Relationship): Verknüpfung / Zusammenhang zwischen zwei oder mehreren Entitäten; z. B. Angestellter Müller leitet Projekt 3232.
+    \1 Eigenschaft (englisch attribute): Was über eine Entität (im Kontext) von Interesse ist; z. B. das Eintrittsdatum des Angestellten Müller.
+\end{outline}
+
+\subsection{Wichtige Dateiformate}
+
+\subsubsection{XML}
+
+Das XML-Format ist eine Auszeichnungssprache (wie HTML) und steht für Extensible Markup Language und ist gut geeignet zur Darstellung hierarchisch strukturierter Daten im Text-Format. Wie bei HTML gliedert sich der Aufbau einer XML-Datei in Tags und Attribute. Die Tags sind dabei frei wählbar.
+
+Mit XML lassen sich beliebig komplexe Strukturen mit beliebigen Tag- und Attributnamen erstellen. Nun kann es erforderlich sein, dass die Struktur und der genaue Aufbau von XML-Dokumenten verbindlich festzulegen sind. Aus diesem Grund werden DTD oder XML-Schema-Definitionen erzeugt, die genaue
+Regeln festlegen, wie ein XML-Dokument aufgebaut sein muss, damit es benutzt werden kann (gültig ist).
+
+
+\subsubsection{JSON}
+
+Im Vergleich zu XML ist das JSON – Format schlanker. Da bei JSON keine schließenden Tags erforderlich sind ist das Format insgesamt kompakter. JSON (JavaScript Object Notation) ist wie XML ein sprachunabhängiges Format, das lesbaren Text in Form von Schlüssel-Wert-Paaren verwendet. Es dient hauptsächlich dem Zweck des Datenaustausches zwischen Anwendungen. JSON ist von der Programmiersprache unabhängig. Parser und Generatoren existieren in allen verbreiteten Sprachen. Des Weiteren gibt es dokumentenorientierte NoSQL-Datenbankmanagementsysteme, die Sammlungen von JSON-ähnlichen Dokumenten verwalten können.
+
+\break
+
+\end{document}
